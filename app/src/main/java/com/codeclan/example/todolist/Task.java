@@ -1,10 +1,12 @@
 package com.codeclan.example.todolist;
 
+import java.io.Serializable;
+
 /**
  * Created by johnny on 29/05/2017.
  */
 
-public class Task {
+public class Task implements Serializable{
 
     private String title;
     private Boolean status;
