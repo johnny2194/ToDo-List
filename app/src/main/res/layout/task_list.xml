@@ -19,7 +19,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add"
         tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="455dp" />
+        tools:layout_editor_absoluteY="455dp"
+        android:onClick="setNewTask"/>
     <ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"

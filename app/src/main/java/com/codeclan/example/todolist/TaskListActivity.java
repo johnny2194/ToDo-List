@@ -49,4 +49,9 @@ public class TaskListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void setNewTask(View view) {
+        Intent intent = new Intent(this, NewTaskActivity.class);
+        startActivity(intent);
+    }
+
 }
