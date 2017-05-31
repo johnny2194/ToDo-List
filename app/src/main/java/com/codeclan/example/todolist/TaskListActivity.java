@@ -1,6 +1,8 @@
 package com.codeclan.example.todolist;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 
 public class TaskListActivity extends AppCompatActivity {
 
+    private SharedPreferences prefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +26,12 @@ public class TaskListActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         TaskList defaultList = new TaskList();
-        ArrayList<Task> list = defaultList.getList();
 
+
+        String sharedPrefsKey = getString(R.string.pref_key);
+        prefs = getSharedPreferences(sharedPrefsKey, Context.MODE_PRIVATE);
+
+        ArrayList<Task> list = Prefs.getTasks(prefs);
         TaskListAdapter taskAdapter = new TaskListAdapter(this, list);
 
 
@@ -40,4 +48,5 @@ public class TaskListActivity extends AppCompatActivity {
         intent.putExtra("Task", task);
         startActivity(intent);
     }
+
 }

@@ -17,10 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TaskDetailActivity"
+        <activity
+            android:name=".TaskDetailActivity"
             android:label="@string/task_detail_title"
-            android:parentActivityName=".TaskListActivity">
-        </activity>
+            android:parentActivityName=".TaskListActivity" />
+        <activity android:name=".NewTaskActivity"></activity>
     </application>
 
 </manifest>
